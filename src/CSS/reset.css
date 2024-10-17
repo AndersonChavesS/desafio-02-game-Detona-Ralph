@@ -5,3 +5,7 @@
   box-sizing: border-box;
   font-family: 'Press Start 2P', system-ui;
 }
+
+:root {
+  font-size: 62.5%;
+}
