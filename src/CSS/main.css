@@ -1,13 +1,52 @@
 @import url(./reset.css);
-.container{
+.container {
   display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-image: url('../assets/images/wall.png');
 }
-.menu{
+.menu {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   height: 90px;
   width: 100%;
+  padding: 10px;
   background-color: #000;
-  color: #FFF;
+  color: #fff;
+  border-bottom: 5px solid #ffd700;
+}
+
+.panel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem auto 0;
+}
+
+.square {
+  width: 150px;
+  height: 150px;
+  background-color: rgb(17, 116, 116);
+  border: 2px solid #111;
+  
+}
+
+.enemy {
+  background-image: url('../assets/images/ralph.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.menu-lives {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-score h2,
+.menu-time h2 {
+  padding: 4px;
+  font-size: 1rem;
+  text-align: center;
 }
