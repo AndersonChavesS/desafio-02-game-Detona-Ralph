@@ -11,11 +11,11 @@
     <div class="container">
       <div class="menu">
         <div class="menu-time">
-          <h2 style="color: red">Time Left</h2>
+          <h2 class="text">Time Left</h2>
           <h2 id="time-left">0</h2>
         </div>
         <div class="menu-score">
-          <h2 style="color: red">Your Score</h2>
+          <h2 class="text">Your Score</h2>
           <h2 id="score">0</h2>
         </div>
         <div class="menu-lives">
@@ -24,7 +24,12 @@
             alt="foto do jogador"
             height="45px"
           />
-          <h2>x3</h2>
+          <h2 id="lives">x3</h2>
+        </div>
+        <div class="controllers">
+          <button onclick="playGame()" id="play">play</button>
+          <button onclick="pauseGame()" id="pause">pause</button>
+          <button onclick="stopGame()" id="stop">stop</button>
         </div>
       </div>
       <div class="panel">
