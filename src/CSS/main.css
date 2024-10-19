@@ -6,6 +6,7 @@
   flex-direction: column;
   height: 100vh;
   background-image: url('../assets/images/wall.png');
+  background-position: center;
 }
 .menu {
   display: flex;
@@ -16,10 +17,11 @@
   padding: 10px;
   background-color: #000;
   color: #fff;
-  border-bottom: 5px solid #ff5900;
+  border-bottom: 5px solid #fffb00;
 }
 
-.text {
+#time-left-text,
+#your-score-text {
   color: #ff5900;
 }
 
@@ -78,9 +80,10 @@
 #play,
 #pause,
 #stop {
+  font-size: 1rem;
   border: none;
-  width: 70px;
-  padding: 2px 10px;
+  width: 80px;
+  padding: 3px;
   border-radius: 4px;
   cursor: pointer;
 }
@@ -90,13 +93,22 @@
   justify-content: center;
   align-items: center;
   margin: 1rem auto 0;
+  gap: 10px;
 }
 
 .square {
   width: 150px;
   height: 150px;
   background-color: rgb(17, 116, 116);
-  border: 2px solid #111;
+  border-radius: 2px;
+}
+
+.square:nth-child(1) {
+  margin-bottom: 10px;
+}
+
+.square:nth-child(2) {
+  margin-bottom: 10px;
 }
 
 .enemy {
