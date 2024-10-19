@@ -40,7 +40,6 @@ function playGame() {
 function stopGame() {
   clearInterval(state.values.timerId);
   clearInterval(state.actions.countDownId);
-  playMusic('gameOver');
   alert(`Game over! Your score is ${state.values.result}`);
   state.view.squares.forEach((square) => {
     square.classList.remove('enemy');
@@ -75,6 +74,7 @@ function valuesLives() {
         playAudio('err');
       }
       if (state.values.lives === 0) {
+        playMusic('gameOver');
         stopGame();
       }
     });
@@ -85,9 +85,9 @@ function countDown() {
   state.values.currentTime--;
   state.view.timeLeft.textContent = state.values.currentTime;
 
-  if (state.values.currentTime === 0 || state.values.currentTime === -1) {
+  if (state.values.currentTime <= 0) {
+    playMusic('gameOver');
     stopGame();
-    return;
   }
 }
 
@@ -95,7 +95,7 @@ function randomSquare() {
   state.view.squares.forEach((square) => {
     square.classList.remove('enemy');
   });
-  let randomNumber = Math.floor(Math.random() * 9);
+  let randomNumber = Math.floor(Math.random() * 12);
   let randomSquare = state.view.squares[randomNumber];
   randomSquare.classList.add('enemy');
   state.values.hitPosition = randomSquare.id;
@@ -133,7 +133,6 @@ function initialize() {
   state.view.lives.style.display = 'block';
   state.view.lives.textContent = state.values.lives;
   state.view.score.textContent = state.values.result;
-  state.view.timeLeft.textContent = state.values.currentTime;
 }
 
 function activeCursorPointer() {
