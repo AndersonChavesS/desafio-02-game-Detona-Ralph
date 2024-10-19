@@ -1,10 +1,9 @@
 @import url(./reset.css);
 .container {
   display: flex;
-  justify-content: top;
   align-items: center;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
   background-image: url('../assets/images/wall.png');
   background-position: center;
 }
@@ -12,7 +11,7 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  height: 70px;
+  height: 175px;
   width: 100%;
   padding: 10px;
   background-color: #000;
@@ -27,19 +26,25 @@
 
 .menu-score h2,
 .menu-time h2 {
-  font-size: 1.6rem;
+  font-size: 3.5rem;
   text-align: center;
 }
 
 .menu-score h2:nth-child(2),
 .menu-time h2:nth-child(2) {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 .menu-lives {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-size: 2.3rem;
+}
+.menu-lives img {
+  width: 75px;
+  height: 75px;
 }
 
 .controllers {
@@ -47,7 +52,7 @@
   flex-direction: column;
   justify-content: left;
   align-items: center;
-  gap: 5px;
+  gap: 12px;
 }
 
 #play {
@@ -80,39 +85,175 @@
 #play,
 #pause,
 #stop {
-  font-size: 1rem;
+  font-size: 3rem;
   border: none;
-  width: 80px;
-  padding: 3px;
-  border-radius: 4px;
+  width: 300px;
+  padding: 5px 50px;
+  border-radius: 1rem;
   cursor: pointer;
 }
 
 .panel {
   display: flex;
-  justify-content: center;
+  margin: 3rem auto 0;
   align-items: center;
-  margin: 1rem auto 0;
-  gap: 10px;
+  gap: 25px;
 }
 
 .square {
-  width: 150px;
-  height: 150px;
+  display: flex;
+  flex: 1;
+  width: 260px;
+  height: 260px;
   background-color: rgb(17, 116, 116);
   border-radius: 2px;
 }
 
 .square:nth-child(1) {
-  margin-bottom: 10px;
+  margin-bottom: 25px;
 }
 
 .square:nth-child(2) {
-  margin-bottom: 10px;
+  margin-bottom: 25px;
 }
 
 .enemy {
   background-image: url('../assets/images/ralph.png');
   background-size: cover;
   background-position: center;
+}
+
+/* Responsive */
+@media (min-width: 768px) and (max-width: 1439px) {
+  .menu {
+    height: 100px;
+  }
+
+  .menu-score h2,
+  .menu-time h2 {
+    font-size: 2rem;
+  }
+
+  .menu-score h2:nth-child(2),
+  .menu-time h2:nth-child(2) {
+    margin-top: 1rem;
+  }
+
+  .menu-lives {
+    font-size: 1.4rem;
+  }
+  .menu-lives img {
+    width: 55px;
+    height: 55px;
+    margin-right: 10px;
+  }
+
+  .controllers {
+    gap: 5px;
+  }
+
+  #play,
+  #pause,
+  #stop {
+    font-size: 1.4rem;
+    width: 150px;
+    padding: 5px;
+    border-radius: 0.6rem;
+  }
+
+  .panel {
+    gap: 10px;
+    margin-top: 18px;
+  }
+
+  .square {
+    width: 180px;
+    height: 180px;
+  }
+
+  .square:nth-child(1) {
+    margin-bottom: 10px;
+  }
+
+  .square:nth-child(2) {
+    margin-bottom: 10px;
+  }
+}
+
+@media (min-width: 350px) and (max-width: 767px) {
+  .menu {
+    height: 70px;
+    justify-content: space-between;
+  }
+
+  .menu-score h2,
+  .menu-time h2 {
+    font-size: 1.3rem;
+  }
+
+  .menu-score h2:nth-child(2),
+  .menu-time h2:nth-child(2) {
+    margin-top: 1rem;
+  }
+
+  .menu-lives {
+    font-size: 0.8rem;
+  }
+  .menu-lives img {
+    max-width: 35px;
+    max-height: 35px;
+  }
+
+  .controllers {
+    gap: 5px;
+  }
+
+  #play,
+  #pause,
+  #stop {
+    font-size: 1.2rem;
+    width: 80px;
+    padding: 2px;
+    border-radius: 0.2rem;
+  }
+
+  .panel {
+    gap: 10px;
+  }
+
+  .square {
+    display: flex;
+    flex: 1;
+    max-width: 12rem;
+    max-height: 12rem;
+  }
+
+  .square:nth-child(1) {
+    margin-bottom: 10px;
+  }
+
+  .square:nth-child(2) {
+    margin-bottom: 10px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 375px) {
+  .panel {
+    margin-top: 23px;
+    gap: 10px;
+  }
+
+  .square {
+    display: flex;
+    width: 11em;
+    height: 11em;
+  }
+
+  .square:nth-child(1) {
+    margin-bottom: 10px;
+  }
+
+  .square:nth-child(2) {
+    margin-bottom: 10px;
+  }
 }

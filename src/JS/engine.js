@@ -95,7 +95,7 @@ function randomSquare() {
   state.view.squares.forEach((square) => {
     square.classList.remove('enemy');
   });
-  let randomNumber = Math.floor(Math.random() * 12);
+  let randomNumber = Math.floor(Math.random() * 9);
   let randomSquare = state.view.squares[randomNumber];
   randomSquare.classList.add('enemy');
   state.values.hitPosition = randomSquare.id;
